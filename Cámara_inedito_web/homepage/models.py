@@ -69,7 +69,7 @@ class Stories(models.Model):
         help_text="Suba el archivo en formato pdf"
     )
 
-    last_modified = models.DateFile(
+    last_modified = models.DateField(
         auto_now=True,
         help_text="última modificación")
 
@@ -116,7 +116,7 @@ class Poetry(models.Model):
         help_text="Suba el archivo en formato pdf"
     )
 
-    last_modified = models.DateFile(
+    last_modified = models.DateField(
         auto_now=True,
         help_text="última modificación")
 
@@ -163,7 +163,7 @@ class Phrases(models.Model):
         help_text="Suba el archivo en formato pdf"
     )
 
-    last_modified = models.DateFile(
+    last_modified = models.DateField(
         auto_now=True,
         help_text="última modificación")
 
@@ -210,7 +210,7 @@ class Lyric(models.Model):
         help_text="Suba el archivo en formato pdf"
     )
 
-    last_modified = models.DateFile(
+    last_modified = models.DateField(
         auto_now=True,
         help_text="última modificación")
 
