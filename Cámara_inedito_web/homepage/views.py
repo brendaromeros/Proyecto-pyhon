@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Phrases, Lyric, Stories, Poetry
-from .models import Author, Genre
+from .models import Author
 
 
 # Create your views here.
@@ -12,7 +12,7 @@ def home(request):
     # Genera contadores de algunos de los objetos principales
     num_stories=Stories.objects.all().count()
     num_authors=Author.objects.count()
-    num_lyricss = Lyrics.objects.all().count()
+    num_lyricss = Lyric.objects.all().count()
     num_phrasess = Phrases.objects.all().count()
     num_poetrys = Poetry.objects.all().count()
     
