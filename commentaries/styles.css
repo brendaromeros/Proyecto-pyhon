@@ -1,0 +1,72 @@
+.comentary-section-container{
+    width: 300px;
+    height: auto;
+    border: 1px solid rgb(100, 100, 100);
+    padding-bottom: 12px;
+}
+
+.publish-comentary-container{
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+}
+
+.commentary-input{
+    width: 100%;
+    border-radius: 4px;
+    height: 36px;
+}
+
+#name-input{
+    margin-top: 2px;
+}
+
+.commentary-button-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.commentary-button{
+    background-color: rgb(200,200,200);
+}
+
+.commentary-button:active{
+    background-color: rgb(220,220,220);
+}
+
+.see-commentary{
+    padding-top: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.commentary-container{
+    border-radius: 4px;
+    border: 1px solid gainsboro;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 8px;
+}
+
+.commentary-author{
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+}
+
+.commentary-text{
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0;
+}
+
+.commentary-qualification{
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0;
+    text-align: right;
+}
