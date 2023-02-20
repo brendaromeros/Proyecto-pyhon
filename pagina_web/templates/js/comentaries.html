@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        /*import data from './comments.json'*/
+
+        function publicar_comentario(){
+            let commentary_text = document.getElementById('commentary-input').value;
+            let name_text = document.getElementById('name-input').value;
+            let calification_text = document.getElementById('calification-input').value;
+
+            if (commentary_text != '' && name_text != '' && calification_text){
+                document.getElementById('commentaries').innerHTML += '<div class="commentary-container">'
+                + '\n<p class="commentary-author">'+name_text+'</p>'
+                + '\n<p class="commentary-text">'+commentary_text+'</p>'
+                + '\n<p class="commentary-qualification">'+calification_text+ '/5';'</p>'
+                + '\n</div>';    
+            }
+    
+        }       
+
+
+        /*function loadCommentaries(){
+            alert(data);
+        }*/
+
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .comentary-section-container{
+    width: 300px;
+    height: auto;
+    border: 1px solid rgb(100, 100, 100);
+    padding-bottom: 12px;
+}
+
+.publish-comentary-container{
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+}
+
+.commentary-input{
+    width: 100%;
+    border-radius: 4px;
+    height: 36px;
+}
+
+#name-input{
+    margin-top: 2px;
+}
+
+.commentary-button-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.commentary-button{
+    background-color: rgb(200,200,200);
+}
+
+.commentary-button:active{
+    background-color: rgb(220,220,220);
+}
+
+.see-commentary{
+    padding-top: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.commentary-container{
+    border-radius: 4px;
+    border: 1px solid gainsboro;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 8px;
+}
+
+.commentary-author{
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+}
+
+.commentary-text{
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0;
+}
+
+.commentary-qualification{
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0;
+    text-align: right;
+}
+    </style>
+</head>
+<body onload="loadCommentaries()">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">La Cámara de lo Inedito</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/principal">Menu Principal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/relatos">Poesía y relatos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/liricas">Frase y líricas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/escritos">Reseñas/Escritos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/aportes">Ilustraciones y aportes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/comentarios">Comentarios</a>
+              </li>
+            </ul>
+            <button  type="submit"><a class="btn btn-primary" href="/signout"> Cerrar Sesión </a></button>
+          </div>
+        </div>
+      </nav>
+      
+    <div class="comentary-section-container" >
+        <div class="publish-comentary-container">
+            <input type="text" placeholder="Ingrese aquí su comentario" class="commentary-input" id="commentary-input">
+            <input type="text" placeholder="Ingrese aquí su nombre" class="commentary-input" id="name-input">
+            <input type="text" placeholder="Ingrese su calificación (1-5)" class="commentary-input" id="calification-input">
+            <div class="commentary-button-container" onclick="publicar_comentario()">
+                <button class="commentary-button" > Publicar comentario</button>
+            </div>
+        </div>
+        <div class="see-commentary" id="commentaries">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>    
+</body>
