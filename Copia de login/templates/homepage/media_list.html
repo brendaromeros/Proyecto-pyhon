@@ -47,20 +47,20 @@
   </nav>
   
   {% block content %}
-    <h1>Relatos </h1>
+    <h1>Ilustraciones y aportes </h1>
 
-    {% if stories_list %}
+    {% if media_list %}
     <ul>
 
-      {% for storie in stories_list %}
+      {% for media in media_list %}
       <li>
-        <a href="{{ storie.get_absolute_url }}">{{ storie.title }}</a> ({{storie.author}})
+        <a href="{{ media.get_absolute_url }}">{{media.title }}</a> ({{media.author}})
       </li>
       {% endfor %}
 
     </ul>
     {% else %}
-      <p>No hay ningún relato actualmente</p>
+      <p>No hay ilustración o aporte aún</p>
     {% endif %}
 {% endblock %}
 

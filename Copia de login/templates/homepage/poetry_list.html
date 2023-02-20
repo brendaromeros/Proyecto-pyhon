@@ -47,20 +47,20 @@
   </nav>
   
   {% block content %}
-    <h1>Relatos </h1>
+    <h1>Poesia </h1>
 
-    {% if stories_list %}
+    {% if poeetry_list %}
     <ul>
 
-      {% for storie in stories_list %}
+      {% for poetry in poetry_list %}
       <li>
-        <a href="{{ storie.get_absolute_url }}">{{ storie.title }}</a> ({{storie.author}})
+        <a href="{{ poetry.get_absolute_url }}">{{ poetry.title }}</a> ({{poetry.author}})
       </li>
       {% endfor %}
 
     </ul>
     {% else %}
-      <p>No hay ningún relato actualmente</p>
+      <p>No hay ninguna poesía ahora</p>
     {% endif %}
 {% endblock %}
 
