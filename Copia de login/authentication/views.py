@@ -47,7 +47,7 @@ def signin (request):
             username = user.username
 
 
-            return render(request, "authentication/index.html", {'fname':fname, 'lname':lname, 'username':username})
+            return render(request, "authentication/menu.html", {'fname':fname, 'lname':lname, 'username':username})
         
         else:
             messages.error(request, "Datos erróneos. Intente de Nuevo")
@@ -57,4 +57,5 @@ def signin (request):
 def signout (request):
     logout(request)
     return redirect('home')
+
 
