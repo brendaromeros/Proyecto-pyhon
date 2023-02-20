@@ -1,5 +1,4 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from authentication import views
 
 urlpatterns = [
@@ -12,10 +11,7 @@ urlpatterns = [
    path('escritos', views.escritos, name='escritos'),
    path('principal', views.principal, name='principal'),
    path('aportes', views.aportes, name='aportes'),
-   path('index', views.index, name='index'),
    path('profile', views.profile, name='profile'),
    path('comentarios', views.comentarios, name='comentarios')
-   
-
 
 ]

@@ -2,13 +2,21 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.core.files.storage import FileSystemStorage
-# Create your views here.
+"""
+Aqu{i se guardan todas las funciones
+que se utilizan para qu ela p{agina fucione.
+"""
 
 
 def home(request):
     logout(request)
     return render(request, 'authentication/index.html')
+
+
+"""
+Esta función dirige al home donde abrira el archivo
+index.html el cual contiene el registo e inicio de sesión.
+"""
 
 
 def signup(request):
@@ -32,6 +40,13 @@ def signup(request):
         return redirect('home')
 
     return render(request, 'authentication/signup.html')
+
+
+"""
+Esta función se encarga de registrar al usuario
+cuya información se registra en una base de datos sqlite3
+en la carpeta paginaweb
+"""
 
 
 def signin(request):
@@ -60,47 +75,92 @@ def signin(request):
     return render(request, 'authentication/signin.html')
 
 
+"""
+Esta función se encarga de iniciar sesión autenticando
+que el usuario esté registrado y si este no está en la base
+no lo dejará registrarse.
+
+"""
+
+
 def signout(request):
     logout(request)
     messages.success(request, "Ha cerrado sesión")
     return redirect('home')
 
 
+"""
+Esta función se encarga de salirse de la sesión
+y regresar a home con una notificación de que
+el proceso ha sido exitoso.
+"""
+
+
 def principal(request):
     return render(request, 'authentication/menu.html')
 
 
-def index(request):
-    if request.method == 'POST' and request.FILES['myfile']:
-        myfile = request.FILES['myfile']
-        fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
-        uploaded_file_url = fs.url(filename)
-        return render(request, 'app/upload.html', {
-            'uploaded_file_url': uploaded_file_url
-        })
-    return render(request, 'app/upload.html')
+"""
+Esta función se encarga de redirigir al archivo
+menu.html
+"""
 
 
 def aportes(request):
     return render(request, 'viñetas/aportes.html')
 
 
+"""
+Esta función se encarga de redirigir al archivo
+aportes.html
+"""
+
+
 def escritos(request):
     return render(request, 'viñetas2/escritos.html')
+
+
+"""
+Esta función se encarga de redirigir al archivo
+escritos.html
+"""
 
 
 def relatos(request):
     return render(request, 'viñetas4/relatos.html')
 
 
+"""
+Esta función se encarga de redirigir al archivo
+relatos.html
+"""
+
+
 def liricas(request):
     return render(request, 'viñetas3/liricas.html')
+
+
+"""
+Esta función se encarga de redirigir al archivo
+liricas.html
+"""
 
 
 def profile(request):
     return render(request, 'authentication/profile.html')
 
 
+"""
+Esta función se encarga de redirigir al archivo
+profile.html
+"""
+
+
 def comentarios(request):
     return render(request, 'js/comentaries.html')
+
+
+"""
+Esta función se encarga de redirigir al archivo
+comentarios.html
+"""
