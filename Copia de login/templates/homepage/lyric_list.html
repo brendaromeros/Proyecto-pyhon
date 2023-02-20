@@ -26,7 +26,7 @@
             <a class="nav-link" href="/poesia">Poesía</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/frases">Frase</a>
+            <a class="nav-link" href="/liricas">Frase</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/liricas">Líricas</a>
@@ -47,14 +47,14 @@
   </nav>
   
   {% block content %}
-    <h1>Relatos </h1>
+    <h1>Líricas </h1>
 
-    {% if stories_list %}
+    {% if lyric_list %}
     <ul>
 
-      {% for storie in stories_list %}
+      {% for lyric in lyric_list %}
       <li>
-        <a href="{{ storie.get_absolute_url }}">{{ storie.title }}</a> ({{storie.author}})
+        <a href="{{ lyric.get_absolute_url }}">{{ lyric.title }}</a> ({{lyric.author}})
       </li>
       {% endfor %}
 

@@ -9,7 +9,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand">La Cámara de lo Inedito</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,16 +20,22 @@
             <a class="nav-link active" aria-current="page" href="/principal">Menu Principal</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/relatos">Poesía y relatos</a>
+            <a class="nav-link" href="/relatos">Relatos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/liricas">Frase y líricas</a>
+            <a class="nav-link" href="/poesia">Poesía</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/escritos">Reseñas/Escritos</a>
+            <a class="nav-link" href="/frases">Frase</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Ilustraciones y aportes</a>
+            <a class="nav-link" href="/liricas">Líricas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/reseñas">Reseñas/Escritos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/media">Ilustraciones y aportes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/index">Subir Archivos</a>
@@ -39,22 +45,22 @@
       </div>
     </div>
   </nav>
-
+  
   {% block content %}
-    <h1>Frases </h1>
+    <h1>Reseñas y escritos </h1>
 
-    {% if stories_list %}
+    {% if others_list %}
     <ul>
 
-      {% for storie in stories_list %}
+      {% for others in others_list %}
       <li>
-        <a href="{{ storie.get_absolute_url }}">{{ storie.title }}</a> ({{storie.author}})
+        <a href="{{ others.get_absolute_url }}">{{ others.title }}</a> ({{others.author}})
       </li>
       {% endfor %}
 
     </ul>
     {% else %}
-      <p>No hay ningún relato actualmente</p>
+      <p>No hay ninguna reseña actualmente</p>
     {% endif %}
 {% endblock %}
 
