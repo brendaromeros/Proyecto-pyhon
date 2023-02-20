@@ -1,6 +1,4 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import Phrases, Lyric, Stories, Poetry
 from .models import Author, Genre, Other, Media
 

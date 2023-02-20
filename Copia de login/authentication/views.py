@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 def home (request):
     return render(request, 'authentication/index.html')
@@ -41,7 +43,6 @@ def signin (request):
 
         if user is not None:
             login(request, user)
-            messages.success(request, "Se ha iniciado sesión satisfactoriamente.")
             fname = user.first_name
             lname = user.last_name
             username = user.username
@@ -58,4 +59,25 @@ def signout (request):
     logout(request)
     return redirect('home')
 
+def relatos (request):
+    return render(request, 'viñetas/relatos.html')
 
+def liricas (request):
+    return render(request, 'viñetas/liricas.html')
+
+def escritos (request):
+    return render(request, 'viñetas/escritos.html')
+
+def principal (request):
+    return render(request, 'authentication/menu.html')
+
+def index (request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'app/upload.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, 'app/upload.html')
